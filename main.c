@@ -5,6 +5,7 @@
 
 #include "communication.h"
 #include "movement.h"
+#include "mapping.h"
 
 
 int main(int argc, char **argv)
