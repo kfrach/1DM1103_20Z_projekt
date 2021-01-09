@@ -21,7 +21,7 @@ void zmiana_znaku_move(int mapa[N][N], int x , int y, char *pozycja);
 
 
 
-void zmiana_znaku_explore(int mapa[N][N], int x , int y, char *pozycja_1, char *pozycja_2, char *pozycja_3 , char *kierunek);
+void zmiana_znaku_explore(int mapa[N][N], int x_1 , int y_1, int x_2, int y_2, int x_3, int y_3, char *pozycja_1, char *pozycja_2, char *pozycja_3);
 // int x - pierwszy x z listy explore z jsona +20
 // int y - pierwszy y z listy explore z jsona +20
 // char *kierunek - z ostatniego jsona przy move musimy wziac kierunek w ktory patrzy np. N
