@@ -26,6 +26,9 @@ int main(int argc, char **argv, int mapa[N][N])
     explore("test");
     }
     
+
+
+    
     for(int i=0;i<N;i++)
     {
         for(int j=0;j<N;j++)
