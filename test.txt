@@ -1,0 +1,3 @@
+5 3 wall
+5 2 wall
+5 1 wall
