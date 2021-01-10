@@ -1,0 +1,13 @@
+8 11 wall
+8 10 wall
+8 9 wall
+7 10 grass
+6 9 grass
+7 9 wall
+8 9 wall
+7 10 grass
+6 10 grass
+5 10 wall
+7 10 grass
+6 10 grass
+5 10 wall

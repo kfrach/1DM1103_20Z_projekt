@@ -9,23 +9,51 @@
 
 
 
-void wczytaj_mape(int mapa[N][N])
+void tablica(int mapa[N][N])
 {
-    int i,j,znak;
+    int x ,y;
+    char type[10];
+    char bufor[255];
+    char *b;
+    FILE *pt;
+    pt = fopen("info.txt","r");
+    
+    while(fgets(bufor, 254, pt))
+    {
+    b = strtok(bufor," ");
+    x = atoi(b);
+    b = strtok(NULL," ");
+    y = atoi(b);    
+    b = strtok(NULL,"\n");
+    strcpy(type,b);    
+    printf("%d %d %s\n",x,y,type);
+    if(strcmp(type,"wall") == 0)
+    mapa[x][y] = 2;
+    else if (strcmp(type,"grass") == 0)
+    mapa[x][y] = 1;
+    else if (strcmp(type,"sand") == 0)
+    mapa[x][y] = 3;     
+    }
+    
+    fclose(pt);
+}
 
-    FILE * fin = fopen("mapa.txt", "r");
+void wypisz_mape(int mapa[N][N])
+{
+    int i,j;    
     for(i=0;i<N;i++)
     {
         for(j=0;j<N;j++)
         {
-            fscanf(fin,"%d", &znak);
-            mapa[i][j] = znak;
+            if (j == N-1)
+            printf("%d\n",mapa[i][j]);
+            else
+            printf("%d",mapa[i][j]);
         }
     }
-    fclose(fin);
 }
 
-void wypisz_mape(int mapa[N][N])
+void zapisz_mape(int mapa[N][N])
 {
     int i,j;
 
@@ -34,57 +62,14 @@ void wypisz_mape(int mapa[N][N])
     {
         for(j=0;j<N;j++)
         {
-            fprintf("&d",mapa[i][j]);
+            if(j==N-1)
+            fprintf(fin,"%d\n",mapa[i][j]);
+            else
+            fprintf(fin,"%d",mapa[i][j]);
+        
+            
+            
         }
     }
     fclose(fin);
-}
-
-
-
-void zmiana_znaku_move(int mapa[N][N], int x , int y, char *pozycja)
-{
-    
-    if (strcmp(pozycja,"grass") == 0)
-    mapa[x][y] = 1;
-
-    else if (strcmp(pozycja,"sand") == 0)
-    mapa[x][y] = 2;
-
-}
-
-void zmiana_znaku_explore(int mapa[N][N], int x_1 , int y_1, int x_2, int y_2, int x_3, int y_3, char *pozycja_1, char *pozycja_2, char *pozycja_3)
-{
-    
-    
-        if (strcmp(pozycja_1,"grass") == 0)
-        mapa[x_1][y_1] = 1;
-
-        else if (strcmp(pozycja_1,"sand") == 0)
-        mapa[x_1][y_1] = 2;
-
-        else if (strcmp(pozycja_1,"wall") == 0)
-        mapa[x_1][y_1] = 3;
-
-        if (strcmp(pozycja_2,"grass") == 0)
-        mapa[x_2][y_2] = 1;
-
-        else if (strcmp(pozycja_2,"sand") == 0)
-        mapa[x_2][y_2] = 2;
-
-        else if (strcmp(pozycja_2,"wall") == 0)
-        mapa[x_2][y_2] = 3;
-
-        if (strcmp(pozycja_3,"grass") == 0)
-        mapa[x_3][y_3] = 1;
-
-        else if (strcmp(pozycja_3,"sand") == 0)
-        mapa[x_3][y_3] = 2;
-
-        else if (strcmp(pozycja_3,"wall") == 0)
-        mapa[x_3][y_3] = 3;
-
-    
-
-
 }
