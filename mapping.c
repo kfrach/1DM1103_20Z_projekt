@@ -16,8 +16,7 @@ void tablica(int mapa[N][N])
     char bufor[255];
     char *b;
     FILE *pt;
-    pt = fopen("info.txt","r");
-    
+    pt = fopen("info.txt","r");    
     while(fgets(bufor, 254, pt))
     {
     b = strtok(bufor," ");
@@ -26,7 +25,6 @@ void tablica(int mapa[N][N])
     y = atoi(b);    
     b = strtok(NULL,"\n");
     strcpy(type,b);    
-    printf("%d %d %s\n",x,y,type);
     if(strcmp(type,"wall") == 0)
     mapa[x][y] = 2;
     else if (strcmp(type,"grass") == 0)

@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <curl/curl.h>
-#include "../cJSON/cJSON.h"
+#include "../../cJSON/cJSON.h"
 
 
 #include "communication.h"

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 8 11 wall
 8 10 wall
 8 9 wall
@@ -11,10 +12,24 @@
 7 10 grass
 6 10 grass
 5 10 wall
+=======
+5 3 wall
+5 2 wall
+5 1 wall
 4 2 grass
 5 3 wall
 5 2 wall
 5 1 wall
+4 2 grass
+5 3 wall
+5 2 wall
+5 1 wall
+>>>>>>> 439fd43a608bbca8ca5a206f0a9797682d0c04a4
+4 2 grass
+5 3 wall
+5 2 wall
+5 1 wall
+<<<<<<< HEAD
 2 1 grass
 1 0 wall
 1 1 grass
@@ -27,3 +42,15 @@
 2 8 grass
 1 8 grass
 0 8 wall
+=======
+4 2 grass
+4 1 grass
+3 0 wall
+4 0 wall
+5 0 wall
+4 1 grass
+3 1 grass
+2 0 wall
+2 1 grass
+2 2 sand
+>>>>>>> 439fd43a608bbca8ca5a206f0a9797682d0c04a4
