@@ -6,7 +6,7 @@
 
 #define N 50
 
-int mapa[N][N];
+
 void tablica(int mapa[N][N]);
 void wypisz_mape(int mapa[N][N]);
 void zapisz_mape(int mapa[N][N]);

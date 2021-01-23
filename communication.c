@@ -44,7 +44,7 @@ char * make_request(char *url)
 {
     CURL *curl;
     FILE *pt;
-    pt = fopen("mapa.txt","a");
+    pt = fopen("info.txt","a");
     CURLcode res;
     Memory chunk;
     chunk.size = 0;

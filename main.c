@@ -8,8 +8,9 @@
 #include "mapping.h"
 
 
-int main(int argc, char **argv, int mapa[N][N])
+int main(int argc, char **argv)
 {
+    int mapa[N][N];
     //char token = "http://edi.iem.pw.edu.pl:30000/worlds/api/v1/worlds/explore/qwerty_23";
     for(int i = 0; i<argc; i++)    
     {
