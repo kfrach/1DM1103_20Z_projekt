@@ -44,6 +44,83 @@ void poznaj_do_okoła(int mapa[N][N], Pozycja x, Pozycja y, Pozycja *kierunek){
 
     do {
         
+         if(kierunek = "N"){
+            if(mapa[x][y+1] = 2||mapa[x-1][y] = 2){
+               rotate_right("test");
+               explore("test");
+            }else if(mapa[x][y+1] = 3||mapa[x-1][y] = 2){
+               move("test");
+               explore("test");
+            }else if(mapa[x-1][y] = 3){
+               rotate_left("test");
+               explore("test");
+            }else if(mapa[x][y+1] = 2||mapa[x-1][y] = 2||mapa[x+1][y] = 2){
+               move("test");
+               explore("test");
+            }else if(mapa[x][y+1] = 3||mapa[x-1][y] = 2||mapa[x+1][y] = 2){
+               rotate_right("test");
+               explore("test");
+            }
+         }
+
+         if(kierunek = "S"){
+            if(mapa[x][y-1] = 2||mapa[x+1][y] = 2){
+               rotate_right("test");
+               explore("test");
+            }else if(mapa[x][y-1] = 3||mapa[x+1][y] = 2){
+               move("test");
+               explore("test");
+            }else if(mapa[x+1][y] = 3){
+               rotate_left("test");
+               explore("test");
+            }else if(mapa[x][y-1] = 2||mapa[x+1][y] = 2||mapa[x-1][y] = 2){
+               move("test");
+               explore("test");
+            }else if(mapa[x][y-1] = 3||mapa[x+1][y] = 2||mapa[x-1][y] = 2){
+               rotate_right("test");
+               explore("test");
+            }
+         }
+
+         if(kierunek = "W"){
+            if(mapa[x-1][y] = 2||mapa[x][y-1] = 2){
+               rotate_right("test");
+               explore("test");
+            }else if(mapa[x-1][y] = 3||mapa[x][y-1] = 2){
+               move("test");
+               explore("test");
+            }else if(mapa[x][y-1] = 3){
+               rotate_left("test");
+               explore("test");
+            }else if(mapa[x][y-1] = 2||mapa[x-1][y] = 2||mapa[x][y+1] = 2){
+               move("test");
+               explore("test");
+            }else if(mapa[x][y-1] = 2||mapa[x-1][y] = 2||mapa[x][y+1] = 2){
+               rotate_right("test");
+               explore("test");
+            }
+         }
+
+         if(kierunek = "E"){
+            if(mapa[x+1][y] = 2||mapa[x][y+1] = 2){
+               rotate_right("test");
+               explore("test");
+            }else if(mapa[x+1][y] = 3||mapa[x][y+1] = 2){
+               move("test");
+               explore("test");
+            }else if(mapa[x][y+1] = 3){
+               rotate_left("test");
+               explore("test");
+            }else if(mapa[x][y+1] = 2||mapa[x+1][y] = 2||mapa[x][y-1] = 2){
+               move("test");
+               explore("test");
+            }else if(mapa[x][y+1] = 2||mapa[x+1][y] = 2||mapa[x][y-1] = 2){
+               rotate_right("test");
+               explore("test");
+            }
+         }
+
+
     }while( x0=Pozycja.x || y0-1 = Pozycja.y);
 
 
