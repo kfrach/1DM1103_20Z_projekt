@@ -13,14 +13,11 @@
 //grass = 3
 //sand = 1
 
-void poznaj_do_okoła(int mapa[N][N], Pozycja x, Pozycja y, Pozycja *kierunek){
-
-
-    int x,y;
-    int x = 1;
-    int y = 2;
-    //int x = Pozycja->x;
-    //int y = Pozycja.y;
+void poznaj_do_okola(int mapa[N][N], Pozycja *pozycja)
+{
+    int x = pozycja->x;
+    int y = pozycja->y;
+    int i = 1;
 
     
     explore("test");
@@ -28,102 +25,98 @@ void poznaj_do_okoła(int mapa[N][N], Pozycja x, Pozycja y, Pozycja *kierunek){
     do
     {
        rotate_left("test");
-    } while (kierunek=!"W");
+    } while (strcmp(pozycja->kierunek,"W") == 0);
 
     do
     {
        move("test");
        explore("test");
-    } while (mapa[x-1][y] = 2);
+    } while (mapa[x-1][y] == 2);
 
     rotate_right("test");
     explore("test");
 
     //int x0 = Pozycja.x;
     //int y0 = Pozycja.y;
-
-    do {
-        
-         if(kierunek = "N"){
-            if(mapa[x][y+1] = 2||mapa[x-1][y] = 2){
+   do{
+         i++;
+         if(strcmp(pozycja->kierunek,"N") == 0){
+            if(mapa[x][y+1] == 2||mapa[x-1][y] == 2){
                rotate_right("test");
                explore("test");
-            }else if(mapa[x][y+1] = 3||mapa[x-1][y] = 2){
+            }else if(mapa[x][y+1] == 3||mapa[x-1][y] == 2){
                move("test");
                explore("test");
-            }else if(mapa[x-1][y] = 3){
+            }else if(mapa[x-1][y] == 3){
                rotate_left("test");
                explore("test");
-            }else if(mapa[x][y+1] = 2||mapa[x-1][y] = 2||mapa[x+1][y] = 2){
+            }else if(mapa[x][y+1] == 2||mapa[x-1][y] == 2||mapa[x+1][y] == 2){
                move("test");
                explore("test");
-            }else if(mapa[x][y+1] = 3||mapa[x-1][y] = 2||mapa[x+1][y] = 2){
+            }else if(mapa[x][y+1] == 3||mapa[x-1][y] == 2||mapa[x+1][y] == 2){
                rotate_right("test");
                explore("test");
             }
          }
 
-         if(kierunek = "S"){
-            if(mapa[x][y-1] = 2||mapa[x+1][y] = 2){
+         if(strcmp(pozycja->kierunek,"S") == 0){
+            if(mapa[x][y-1] == 2||mapa[x+1][y] == 2){
                rotate_right("test");
                explore("test");
-            }else if(mapa[x][y-1] = 3||mapa[x+1][y] = 2){
+            }else if(mapa[x][y-1] == 3||mapa[x+1][y] == 2){
                move("test");
                explore("test");
-            }else if(mapa[x+1][y] = 3){
+            }else if(mapa[x+1][y] == 3){
                rotate_left("test");
                explore("test");
-            }else if(mapa[x][y-1] = 2||mapa[x+1][y] = 2||mapa[x-1][y] = 2){
+            }else if(mapa[x][y-1] == 2||mapa[x+1][y] == 2||mapa[x-1][y] == 2){
                move("test");
                explore("test");
-            }else if(mapa[x][y-1] = 3||mapa[x+1][y] = 2||mapa[x-1][y] = 2){
+            }else if(mapa[x][y-1] == 3||mapa[x+1][y] == 2||mapa[x-1][y] == 2){
                rotate_right("test");
                explore("test");
             }
          }
 
-         if(kierunek = "W"){
-            if(mapa[x-1][y] = 2||mapa[x][y-1] = 2){
+         if(strcmp(pozycja->kierunek,"W") == 0){
+            if(mapa[x-1][y] == 2||mapa[x][y-1] == 2){
                rotate_right("test");
                explore("test");
-            }else if(mapa[x-1][y] = 3||mapa[x][y-1] = 2){
+            }else if(mapa[x-1][y] == 3||mapa[x][y-1] == 2){
                move("test");
                explore("test");
-            }else if(mapa[x][y-1] = 3){
+            }else if(mapa[x][y-1] == 3){
                rotate_left("test");
                explore("test");
-            }else if(mapa[x][y-1] = 2||mapa[x-1][y] = 2||mapa[x][y+1] = 2){
+            }else if(mapa[x][y-1] == 2||mapa[x-1][y] == 2||mapa[x][y+1] == 2){
                move("test");
                explore("test");
-            }else if(mapa[x][y-1] = 2||mapa[x-1][y] = 2||mapa[x][y+1] = 2){
+            }else if(mapa[x][y-1] == 2||mapa[x-1][y] == 2||mapa[x][y+1] == 2){
                rotate_right("test");
                explore("test");
             }
          }
 
-         if(kierunek = "E"){
-            if(mapa[x+1][y] = 2||mapa[x][y+1] = 2){
+         if(strcmp(pozycja->kierunek,"E") == 0){
+            if(mapa[x+1][y] == 2||mapa[x][y+1] == 2){
                rotate_right("test");
                explore("test");
-            }else if(mapa[x+1][y] = 3||mapa[x][y+1] = 2){
+            }else if(mapa[x+1][y] == 3||mapa[x][y+1] == 2){
                move("test");
                explore("test");
-            }else if(mapa[x][y+1] = 3){
+            }else if(mapa[x][y+1] == 3){
                rotate_left("test");
                explore("test");
-            }else if(mapa[x][y+1] = 2||mapa[x+1][y] = 2||mapa[x][y-1] = 2){
+            }else if(mapa[x][y+1] == 2||mapa[x+1][y] == 2||mapa[x][y-1] == 2){
                move("test");
                explore("test");
-            }else if(mapa[x][y+1] = 2||mapa[x+1][y] = 2||mapa[x][y-1] = 2){
+            }else if(mapa[x][y+1] == 2||mapa[x+1][y] == 2||mapa[x][y-1] == 2){
                rotate_right("test");
                explore("test");
             }
-         }
+         
+      }while(i=100);
 
-
-    }while( x0=Pozycja.x || y0-1 = Pozycja.y);
-
-
-    
+      
 
 }

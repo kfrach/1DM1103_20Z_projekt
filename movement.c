@@ -5,7 +5,7 @@
 
 #include "communication.h"
 #include "movement.h"
-
+#include "algorytm.h"
 
 int move(char *token)
 {

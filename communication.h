@@ -9,6 +9,13 @@ typedef struct _Memory
     size_t size;
 } Memory;
 
+typedef struct _Pozycja
+{
+    int x;
+    int y;
+    char *kierunek;
+}Pozycja;
+
 
 
 

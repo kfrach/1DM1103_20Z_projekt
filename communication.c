@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <curl/curl.h>
-#include "../../cJSON/cJSON.h"
+#include "../cJSON/cJSON.h"
 
 
 #include "communication.h"
@@ -40,9 +40,9 @@ static size_t write_callback(void *data, size_t size, size_t nmemb, void *userp)
 }
 
 
-char * make_request(char *url)
+char * make_request(char *url, Pozycja *pozycja)
 {
-    CURL *curl;
+    CURL *curl;    
     FILE *pt;
     pt = fopen("info.txt","a");
     CURLcode res;
@@ -129,12 +129,16 @@ char * make_request(char *url)
                 }  
 
             payload =  cJSON_GetObjectItemCaseSensitive(monitor_json, "payload");                                        
-            cJSON  *x = cJSON_GetObjectItemCaseSensitive(payload, "current_x");            
-            cJSON  *y = cJSON_GetObjectItemCaseSensitive(payload, "current_y");            
+            cJSON  *x1 = cJSON_GetObjectItemCaseSensitive(payload, "current_x");            
+            cJSON  *y1 = cJSON_GetObjectItemCaseSensitive(payload, "current_y");            
             cJSON  *type = cJSON_GetObjectItemCaseSensitive(payload, "field_type");
+            cJSON  *kierunekk = cJSON_GetObjectItemCaseSensitive(payload, "direction");             
             printf("field type : %s\n",type->valuestring);
-            printf("x :%d || y: %d \n",x->valueint, y->valueint);
-            fprintf(pt,"%d %d %s\n",x->valueint,y->valueint,type->valuestring);           
+            printf("x :%d || y: %d \n",x1->valueint, y1->valueint);
+            fprintf(pt,"%d %d %s\n",x1->valueint,y1->valueint,type->valuestring);
+            pozycja->x = x1->valueint;
+            pozycja->y = y1->valueint;
+            strcpy(pozycja->kierunek, kierunekk->valuestring);                       
             free(chunk.response);
             curl_easy_cleanup(curl);
             }

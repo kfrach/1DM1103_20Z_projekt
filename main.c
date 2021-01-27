@@ -2,15 +2,16 @@
 #include <stdlib.h>
 #include <string.h>
 #include <curl/curl.h>
-#include "../../cJSON/cJSON.h"
+#include "../cJSON/cJSON.h"
 #include "communication.h"
 #include "movement.h"
 #include "mapping.h"
+#include "algorytm.h"
 
-
-int main(int argc, char **argv)
+int main(int argc, char **argv, Pozycja *pozycja)
 {
     int mapa[N][N];
+    
     //char token = "http://edi.iem.pw.edu.pl:30000/worlds/api/v1/worlds/explore/qwerty_23";
     for(int i = 0; i<argc; i++)    
     {
@@ -26,15 +27,17 @@ int main(int argc, char **argv)
     else if (strcmp(argv[i],"E") == 0)
     explore("test");
     }
-    
 
-    int mapa[N][N];
+
+
+    printf("?????????     %d      ?????????",pozycja -> y);
+
+
     
     for(int i=0;i<N;i++)
     {
         for(int j=0;j<N;j++)
-        mapa[i][j] = 0;        
-        
+        mapa[i][j] = 0;
     }
             
     tablica(mapa);
