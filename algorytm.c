@@ -29,9 +29,9 @@ void poznaj_do_okola(int mapa[N][N])
        rotate_left("test");
        zwrot = wczytaj_pozycje(3);
        i++;
-    } while ((zwrot = 4) || (i = 5));
+    } while ((zwrot =! 4) || (i = 5));
 
-    do
+    /*do
     {
        move("test");
        explore("test");
@@ -152,5 +152,5 @@ void poznaj_do_okola(int mapa[N][N])
          }
          
       }while((x = x_zerowa)&&(y = y_zerowa - 1));
-
+      */
 }

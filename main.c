@@ -8,7 +8,7 @@
 #include "mapping.h"
 #include "algorytm.h"
 
-int main(int argc, char **argv, Pozycja *pozycja)
+int main(int argc, char **argv)
 {
     int mapa[N][N];
     
