@@ -8,6 +8,6 @@
 
 
 
-void poznaj_do_okola(int mapa[N][N], Pozycja *pozycja);
+void poznaj_do_okola(int mapa[N][N]);
 
 #endif

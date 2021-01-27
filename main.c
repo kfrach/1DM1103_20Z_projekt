@@ -12,6 +12,8 @@ int main(int argc, char **argv, Pozycja *pozycja)
 {
     int mapa[N][N];
     
+    poznaj_do_okola(mapa);
+
     //char token = "http://edi.iem.pw.edu.pl:30000/worlds/api/v1/worlds/explore/qwerty_23";
     for(int i = 0; i<argc; i++)    
     {
