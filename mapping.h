@@ -8,6 +8,7 @@
 
 
 void tablica(int mapa[N][N]);
+int wczytaj_pozycje(int i);
 void wypisz_mape(int mapa[N][N]);
 void zapisz_mape(int mapa[N][N]);
 

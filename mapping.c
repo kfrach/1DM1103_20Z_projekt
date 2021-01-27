@@ -36,6 +36,39 @@ void tablica(int mapa[N][N])
     fclose(pt);
 }
 
+
+int wczytaj_pozycje(int i){
+    
+
+    int x ,y,z;
+    char type[10];
+    char bufor[255];
+    char *b;
+    FILE *pt;
+    pt = fopen("pozycja.txt","r");    
+    while(fgets(bufor, 254, pt))
+    {
+    b = strtok(bufor," ");
+    x = atoi(b);
+    b = strtok(NULL," ");
+    y = atoi(b);    
+    b = strtok(NULL,"\n");
+    z = atoi(b);
+    }
+    if(i=1)
+    {
+    return x;  
+    }else if(i=2)
+    {
+    return y;  
+    }else if(i=3)
+    {
+    return z;  
+    }
+    }
+
+
+
 void wypisz_mape(int mapa[N][N])
 {
     int i,j;    

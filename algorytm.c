@@ -15,8 +15,9 @@
 
 void poznaj_do_okola(int mapa[N][N], Pozycja *pozycja)
 {
-    int x = pozycja->x;
-    int y = pozycja->y;
+    int x = wczytaj_pozycje(1);
+    int y = wczytaj_pozycje(2);
+    int zwrot = wczytaj_pozycje(3);
     int i = 1;
 
     
@@ -25,22 +26,28 @@ void poznaj_do_okola(int mapa[N][N], Pozycja *pozycja)
     do
     {
        rotate_left("test");
-    } while (strcmp(pozycja->kierunek,"W") == 0);
+       zwrot = wczytaj_pozycje(3);
+    } while (zwrot = 4);
 
     do
     {
        move("test");
        explore("test");
+       x = wczytaj_pozycje(1);
+       y = wczytaj_pozycje(2);
+       zwrot = wczytaj_pozycje(3);
     } while (mapa[x-1][y] == 2);
 
     rotate_right("test");
     explore("test");
 
-    //int x0 = Pozycja.x;
-    //int y0 = Pozycja.y;
+    int x_zerowa = wczytaj_pozycje(1);
+    int y_zerowa = wczytaj_pozycje(2);
+    int zwrot = wczytaj_pozycje(3);
+
    do{
          i++;
-         if(strcmp(pozycja->kierunek,"N") == 0){
+         if(zwrot = 8){
             if(mapa[x][y+1] == 2||mapa[x-1][y] == 2){
                rotate_right("test");
                explore("test");
@@ -59,7 +66,7 @@ void poznaj_do_okola(int mapa[N][N], Pozycja *pozycja)
             }
          }
 
-         if(strcmp(pozycja->kierunek,"S") == 0){
+         if(zwrot = 2){
             if(mapa[x][y-1] == 2||mapa[x+1][y] == 2){
                rotate_right("test");
                explore("test");
@@ -78,7 +85,7 @@ void poznaj_do_okola(int mapa[N][N], Pozycja *pozycja)
             }
          }
 
-         if(strcmp(pozycja->kierunek,"W") == 0){
+         if(zwrot = 4){
             if(mapa[x-1][y] == 2||mapa[x][y-1] == 2){
                rotate_right("test");
                explore("test");
@@ -97,7 +104,7 @@ void poznaj_do_okola(int mapa[N][N], Pozycja *pozycja)
             }
          }
 
-         if(strcmp(pozycja->kierunek,"E") == 0){
+         if(zwrot = 6){
             if(mapa[x+1][y] == 2||mapa[x][y+1] == 2){
                rotate_right("test");
                explore("test");
@@ -114,9 +121,8 @@ void poznaj_do_okola(int mapa[N][N], Pozycja *pozycja)
                rotate_right("test");
                explore("test");
             }
+         }
          
-      }while(i=100);
-
-      
+      }while((x = x_zerowa)||(y = y_zerowa - 1));
 
 }

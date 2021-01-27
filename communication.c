@@ -40,7 +40,7 @@ static size_t write_callback(void *data, size_t size, size_t nmemb, void *userp)
 }
 
 
-char * make_request(char *url, Pozycja *pozycja)
+char * make_request(char *url)
 {
     CURL *curl;    
     FILE *pt;
@@ -135,10 +135,7 @@ char * make_request(char *url, Pozycja *pozycja)
             cJSON  *kierunekk = cJSON_GetObjectItemCaseSensitive(payload, "direction");             
             printf("field type : %s\n",type->valuestring);
             printf("x :%d || y: %d \n",x1->valueint, y1->valueint);
-            fprintf(pt,"%d %d %s\n",x1->valueint,y1->valueint,type->valuestring);
-            pozycja->x = x1->valueint;
-            pozycja->y = y1->valueint;
-            strcpy(pozycja->kierunek, kierunekk->valuestring);                       
+            fprintf(pt,"%d %d %s\n",x1->valueint,y1->valueint,type->valuestring);                  
             free(chunk.response);
             curl_easy_cleanup(curl);
             }
