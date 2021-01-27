@@ -98,9 +98,7 @@ char * make_request(char *url)
             {                                    
             cJSON  *x = cJSON_GetObjectItemCaseSensitive(ruch, "x");            
             cJSON  *y = cJSON_GetObjectItemCaseSensitive(ruch, "y");            
-            cJSON  *type = cJSON_GetObjectItemCaseSensitive(ruch, "type");
-            printf("field type : %s\n",type->valuestring);
-            printf("x :%d || y: %d \n",x->valueint, y->valueint);
+            cJSON  *type = cJSON_GetObjectItemCaseSensitive(ruch, "type");            
             fprintf(pt,"%d %d %s\n",x->valueint,y->valueint,type->valuestring);
             }          
             free(chunk.response);
@@ -134,9 +132,8 @@ char * make_request(char *url)
             cJSON  *x1 = cJSON_GetObjectItemCaseSensitive(payload, "current_x");            
             cJSON  *y1 = cJSON_GetObjectItemCaseSensitive(payload, "current_y");            
             cJSON  *type = cJSON_GetObjectItemCaseSensitive(payload, "field_type");
-            cJSON  *kierunek = cJSON_GetObjectItemCaseSensitive(payload, "direction");             
-            printf("field type : %s\n",type->valuestring);
-            printf("x :%d || y: %d \n",x1->valueint, y1->valueint);
+            cJSON  *kierunek = cJSON_GetObjectItemCaseSensitive(payload, "direction");           
+            
             fprintf(pt,"%d %d %s\n",x1->valueint,y1->valueint,type->valuestring);
             fprintf(kt,"%d %d %s\n",x1->valueint,y1->valueint,kierunek->valuestring);           
             free(chunk.response);

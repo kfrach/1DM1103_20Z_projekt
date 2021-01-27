@@ -64,13 +64,13 @@ int wczytaj_pozycje(int i){
     z = 6;     
     };
     
-    if(i=1)
+    if(i==1)
     {
     return x;  
-    }else if(i=2)
+    }else if(i==2)
     {
     return y;  
-    }else if(i=3)
+    }else if(i==3)
     {
     return z;  
     }
