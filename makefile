@@ -1,4 +1,4 @@
-DEPS=main.o movement.o communication.o mapping.o
+DEPS=main.o movement.o communication.o mapping.o algorytm.o
 
 
 1DM1103_20Z_projekt: $(DEPS)

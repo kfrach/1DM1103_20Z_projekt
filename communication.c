@@ -44,7 +44,9 @@ char * make_request(char *url)
 {
     CURL *curl;    
     FILE *pt;
+    FILE *kt;
     pt = fopen("info.txt","a");
+    kt = fopen("pozycja.txt","w");
     CURLcode res;
     Memory chunk;
     chunk.size = 0;
@@ -132,14 +134,16 @@ char * make_request(char *url)
             cJSON  *x1 = cJSON_GetObjectItemCaseSensitive(payload, "current_x");            
             cJSON  *y1 = cJSON_GetObjectItemCaseSensitive(payload, "current_y");            
             cJSON  *type = cJSON_GetObjectItemCaseSensitive(payload, "field_type");
-            cJSON  *kierunekk = cJSON_GetObjectItemCaseSensitive(payload, "direction");             
+            cJSON  *kierunek = cJSON_GetObjectItemCaseSensitive(payload, "direction");             
             printf("field type : %s\n",type->valuestring);
             printf("x :%d || y: %d \n",x1->valueint, y1->valueint);
-            fprintf(pt,"%d %d %s\n",x1->valueint,y1->valueint,type->valuestring);                  
+            fprintf(pt,"%d %d %s\n",x1->valueint,y1->valueint,type->valuestring);
+            fprintf(kt,"%d %d %s\n",x1->valueint,y1->valueint,kierunek->valuestring);           
             free(chunk.response);
             curl_easy_cleanup(curl);
             }
         }
     }
     fclose(pt);
+    fclose(kt);
 }

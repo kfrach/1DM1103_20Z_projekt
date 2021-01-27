@@ -53,8 +53,17 @@ int wczytaj_pozycje(int i){
     b = strtok(NULL," ");
     y = atoi(b);    
     b = strtok(NULL,"\n");
-    z = atoi(b);
-    }
+    strcpy(type,b);    
+    if(strcmp(type,"N") == 0)
+    z = 8;
+    else if (strcmp(type,"S") == 0)
+    z = 2;
+    else if (strcmp(type,"W") == 0)
+    z = 4;
+    else if (strcmp(type,"E") == 0)
+    z = 6;     
+    };
+    
     if(i=1)
     {
     return x;  
